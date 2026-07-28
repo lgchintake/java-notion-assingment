@@ -1,0 +1,113 @@
+# ---------- OS files ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ---------- Editor / IDE ----------
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+*.swp
+*.swo
+*~
+.gradle/
+
+# =========================================
+# Frontend (ReactJS)
+# =========================================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.eslintcache
+frontend/coverage/
+frontend/.vite/
+frontend/.cache/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/.turbo/
+
+# =========================================
+# Backend (Node.js / Express)
+# =========================================
+backend/node_modules/
+backend/dist/
+backend/build/
+backend/.env
+backend/.env.local
+backend/.env.development.local
+backend/.env.test.local
+backend/.env.production.local
+backend/logs/
+backend/*.log
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+backend/pnpm-debug.log*
+backend/coverage/
+backend/.nyc_output/
+
+# =========================================
+# Java Service (Spring Boot / Gradle)
+# =========================================
+java-service/build/
+java-service/.gradle/
+java-service/out/
+java-service/bin/
+java-service/logs/
+java-service/*.log
+java-service/HELP.md
+
+# Gradle wrapper jar should be committed; ignore local gradle caches only
+java-service/.gradle/**
+!java-service/gradle/wrapper/gradle-wrapper.jar
+!java-service/gradle/wrapper/gradle-wrapper.properties
+
+# Compiled class files
+java-service/**/*.class
+
+# Spring Boot
+java-service/application-local.yml
+java-service/application-local.properties
+java-service/.env
+
+# Java packaging
+java-service/*.jar
+java-service/*.war
+!java-service/gradle/wrapper/*.jar
+
+# ---------- Generic (covers nested/misplaced files too) ----------
+node_modules/
+dist/
+build/
+*.env
+.env
+.env.local
+.env.*.local
+*.log
+logs/
+.gradle/
+out/
+*.class
+*.jar
+*.war
+!gradle-wrapper.jar
+coverage/
+.turbo/
+.cache/

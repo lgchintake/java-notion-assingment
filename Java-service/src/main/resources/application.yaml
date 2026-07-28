@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: Java-service
+
+server:
+  port: ${PORT:8081}
+
+student-service:
+  node-api-base-url: ${NODE_API_BASE_URL:http://localhost:5007}
+  allowed-origin: ${UI_URL:http://localhost:5173}
