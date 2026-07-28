@@ -177,7 +177,7 @@ CREATE TABLE user_leave_policy (
 
 -- functions
 DROP FUNCTION IF EXISTS staff_add_update(JSONB);
-CREATE OR REPLACE FUNCTION public.staff_add_update(data jsonb)
+CREATE OR REPLACE FUNCTION school_mgmt.staff_add_update(data jsonb)
 RETURNS TABLE("userId" INTEGER, status boolean, message TEXT, description TEXT) 
 LANGUAGE 'plpgsql'
 AS $BODY$
@@ -296,7 +296,7 @@ $BODY$;
 
 --student add/update
 DROP FUNCTION IF EXISTS student_add_update(JSONB);
-CREATE OR REPLACE FUNCTION public.student_add_update(data jsonb)
+CREATE OR REPLACE FUNCTION school_mgmt.student_add_update(data jsonb)
 RETURNS TABLE("userId" INTEGER, status boolean, message TEXT, description TEXT) 
 LANGUAGE 'plpgsql'
 AS $BODY$
@@ -426,7 +426,7 @@ END;
 $BODY$;
 
 
-DROP FUNCTION IF EXISTS public.get_dashboard_data(INTEGER);
+DROP FUNCTION IF EXISTS school_mgmt.get_dashboard_data(INTEGER);
 CREATE OR REPLACE FUNCTION get_dashboard_data(_user_id INTEGER)
 RETURNS JSONB
 LANGUAGE plpgsql
@@ -728,7 +728,7 @@ END;
 $BODY$;
 
 
-DROP FUNCTION IF EXISTS public.get_notices(INTEGER);
+DROP FUNCTION IF EXISTS school_mgmt.get_notices(INTEGER);
 CREATE OR REPLACE FUNCTION get_notices(_user_id INTEGER)
 RETURNS TABLE (
     id INTEGER,

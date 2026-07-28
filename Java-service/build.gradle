@@ -22,7 +22,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webclient'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0'
-    runtimeOnly "io.netty:netty-resolver-dns-native-macos:osx-aarch_64"
+    implementation 'org.apache.pdfbox:pdfbox:2.0.30'
     testImplementation 'org.springframework.boot:spring-boot-starter-webclient-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
