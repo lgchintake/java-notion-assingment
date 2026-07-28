@@ -1,0 +1,117 @@
+{
+  "info": {
+    "_postman_id": "180a7143-d6a8-448a-9a13-f039de81ee16",
+    "name": "student-portal-assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4870811"
+  },
+  "item": [
+    {
+      "name": "report",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Access-Token",
+            "value": "{{accessToken}}"
+          },
+          {
+            "key": "Refresh-Token",
+            "value": "{{refreshToken}}"
+          },
+          {
+            "key": "Csrf-Token",
+            "value": "{{csrfToken}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/students/2/report",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "students",
+            "2",
+            "report"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Get cookies from the response",
+              "const accessToken = pm.cookies.get(\"accessToken\");",
+              "const refreshToken = pm.cookies.get(\"refreshToken\");",
+              "const csrfToken = pm.cookies.get(\"csrfToken\");",
+              "",
+              "// Store in environment variables",
+              "if (accessToken) {",
+              "    pm.environment.set(\"accessToken\", accessToken);",
+              "}",
+              "",
+              "if (refreshToken) {",
+              "    pm.environment.set(\"refreshToken\", refreshToken);",
+              "}",
+              "",
+              "if (csrfToken) {",
+              "    pm.environment.set(\"csrfToken\", csrfToken);",
+              "}",
+              "",
+              "// Optional: Log values",
+              "console.log(\"accessToken:\", accessToken);",
+              "console.log(\"refreshToken:\", refreshToken);",
+              "console.log(\"csrfToken:\", csrfToken);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\":\"admin@school-admin.com\",\n    \"password\": \"3OU4zn3q6Zh9\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5007/api/v1/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5007",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_0yfb",
+      "secret": true
+    }
+  ]
+}
